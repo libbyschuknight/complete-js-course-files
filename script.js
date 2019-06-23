@@ -57,11 +57,11 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 */
 
 // store mass and height in vars
-var marksMass = 80;
-var marksHeight = 1.65;
+var marksMass = 78;
+var marksHeight = 1.69;
 
-var johnsMass = 120;
-var johnsHeight = 1.77;
+var johnsMass = 92;
+var johnsHeight = 1.95;
 
 // caluate both BMIS
 // var marksBmi = marksMass / (marksHeight * marksHeight);
@@ -80,4 +80,4 @@ console.log(marksBmi, johnsBmi);
 var isMarksBmiHigher = marksBmi > johnsBmi;
 
 // print to console
-console.log('Is Marks BMI higher than Johns?', isMarksBmiHigher);
+console.log('Is Mark\'s BMI higher than Johns?', isMarksBmiHigher);
