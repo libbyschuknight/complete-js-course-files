@@ -100,4 +100,115 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 GOOD LUCK 😀
 */
 
-// 1. Calculate the average score for each team
+// // 1. Calculate the average score for each team
+
+// // var johnsTeamsScores = [89, 120, 103];
+
+// var johnsTeamsAvgScore = (89 + 120 + 103) / 3;
+// console.log(johnsTeamsAvgScore);
+
+// // var mikesTeamsScores = [116, 94, 123];
+// var mikesTeamsAvgScore = (116 + 94 + 123) / 3;
+// console.log(mikesTeamsAvgScore);
+
+// // 4. EXTRA: Mary also plays basketball, and her team scored 97, 134 and 105 points. Like before, log the average winner to the console. HINT: you will need the && operator to take the decision. If you can't solve this one, just watch the solution, it's no problem :)
+// var marysTeamsAvgScore = (97 + 134 + 105) / 3;
+// console.log(marysTeamsAvgScore);
+
+// // 2. Decide which teams wins in average (highest average score), and print the winner to the console. Also include the average score in the output.
+// // 3. Then change the scores to show different winners. Don't forget to take into account there might be a draw (the same average score)
+
+// // if (
+// //   johnsTeamsAvgScore === mikesTeamsAvgScore &&
+// //   marysTeamsAvgScore === mikesTeamsAvgScore &&
+// //   johnsTeamsAvgScore === marysTeamsAvgScore
+// // ) {
+// //   console.log(
+// //     'DRAW!!! ' +
+// //       'Johns teams score: ' +
+// //       johnsTeamsAvgScore +
+// //       ' Mikes teams score ' +
+// //       mikesTeamsAvgScore +
+// //       ' Marys teams score ' +
+// //       mikesTeamsAvgScore
+// //   );
+// // } else if (
+// //   johnsTeamsAvgScore > mikesTeamsAvgScore &&
+// //   johnsTeamsAvgScore > marysTeamsAvgScore
+// // ) {
+// //   console.log('Johns team wins: ' + johnsTeamsAvgScore);
+// // } else if (
+// //   mikesTeamsAvgScore > johnsTeamsAvgScore &&
+// //   mikesTeamsAvgScore > marysTeamsAvgScore
+// // ) {
+// //   console.log('Mikes team wins: ' + mikesTeamsAvgScore);
+// // } else {
+// //   console.log('Marys team wins: ' + marysTeamsAvgScore);
+// // }
+
+// if (
+//   johnsTeamsAvgScore > mikesTeamsAvgScore &&
+//   johnsTeamsAvgScore > marysTeamsAvgScore
+// ) {
+//   console.log('Johns team wins: ' + johnsTeamsAvgScore);
+// } else if (
+//   mikesTeamsAvgScore > johnsTeamsAvgScore &&
+//   mikesTeamsAvgScore > marysTeamsAvgScore
+// ) {
+//   console.log('Mikes team wins: ' + mikesTeamsAvgScore);
+// } else if (
+//   marysTeamsAvgScore > johnsTeamsAvgScore &&
+//   marysTeamsAvgScore > mikesTeamsAvgScore
+// ) {
+//   console.log('Marys team wins: ' + marysTeamsAvgScore);
+// } else {
+//   console.log('DRAW!!!');
+// }
+
+/*************
+ * FUNCTIONS
+ * these are function statements
+ ***************/
+
+// function calculateAge(birthYear) {
+//   return 2019 - birthYear;
+// }
+
+// var ageLibby = calculateAge(1974);
+// console.log(ageLibby);
+
+// function yearsUntilRetire(year, firstName) {
+//   var age = calculateAge(year);
+//   var retirement = 65 - age;
+//   if (retirement > 0) {
+//     console.log(firstName + ' retires in ' + retirement + ' years');
+//   } else {
+//     console.log(firstName + ' is already retired');
+//   }
+// }
+
+// yearsUntilRetire(1950, 'Libby');
+
+/*************
+ * Functions statements and expressions
+ ***************/
+// // Function statement / declaration?
+
+// function whatDoYouDo(job, firstName) {}
+
+// //  Function expression
+
+var whatDoYouDo = function(job, firstName) {
+  switch (job) {
+    case 'teacher':
+      return firstName + ' teaches';
+    case 'driver':
+      return firstName + ' drives';
+    case 'designer':
+      return firstName + ' designs';
+    default:
+      return firstName + ' does something else';
+  }
+};
+
+console.log(whatDoYouDo('teacher', 'Libby'));
