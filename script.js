@@ -198,17 +198,151 @@ GOOD LUCK 😀
 
 // //  Function expression
 
-var whatDoYouDo = function(job, firstName) {
-  switch (job) {
-    case 'teacher':
-      return firstName + ' teaches';
-    case 'driver':
-      return firstName + ' drives';
-    case 'designer':
-      return firstName + ' designs';
-    default:
-      return firstName + ' does something else';
-  }
-};
+// var whatDoYouDo = function(job, firstName) {
+//   switch (job) {
+//     case 'teacher':
+//       return firstName + ' teaches';
+//     case 'driver':
+//       return firstName + ' drives';
+//     case 'designer':
+//       return firstName + ' designs';
+//     default:
+//       return firstName + ' does something else';
+//   }
+// };
 
-console.log(whatDoYouDo('teacher', 'Libby'));
+// console.log(whatDoYouDo('teacher', 'Libby'));
+
+/*************
+ Arrays
+ ***************/
+
+// var names = ['john', 'mark', 'jane'];
+// console.log(names);
+
+// var years = new Array(1990, 1991, 1992);
+
+// names[1] = 'Ben';
+// names[5] = 'Mary';
+// console.log(names);
+
+// // diff data types
+
+// var lib = ['lib', 45, 'new job', true];
+// console.log(lib);
+
+// lib.push('yesssss');
+// console.log(lib);
+
+// console.log(lib.indexOf(45));
+// console.log(lib.indexOf(true));
+
+// var old = lib.indexOf(45) === -1 ? 'lib is not old' : 'lib is old';
+
+// console.log(old);
+
+/*****************************
+ * CODING CHALLENGE 3
+ */
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+
+GOOD LUCK 😀
+*/
+
+// var bills = [48, 124, 268];
+// console.log('Bills: ', bills);
+
+// function calculateTips(billsArray) {
+//   billTipArray = [];
+//   console.log(billTipArray);
+//   console.log(billTipArray);
+
+//   billsArray.forEach(bill => {
+//     if (bill < 50) {
+//       billTipArray.push(bill + bill * 0.2);
+//     } else if (bill >= 50 && bill < 200) {
+//       billTipArray.push(bill + bill * 0.15);
+//     } else {
+//       billTipArray.push(bill + bill * 0.1);
+//     }
+//   });
+//   return billTipArray;
+// }
+
+// var billsWithTips = calculateTips(bills);
+
+// console.log('Final paid amounts: ', billsWithTips);
+
+// =======
+
+// var bills = [48, 124, 268];
+// console.log('Bills: ', bills);
+
+// function calculateTips(billsArray) {
+//   tipArray = [];
+//   billsArray.forEach(bill => {
+//     if (bill < 50) {
+//       tipArray.push(bill * 0.2);
+//     } else if (bill >= 50 && bill < 200) {
+//       tipArray.push(bill * 0.15);
+//     } else {
+//       tipArray.push(bill * 0.1);
+//     }
+//   });
+//   return tipArray;
+// }
+
+// var tips = calculateTips(bills);
+
+// console.log('Tips: ', tips);
+
+// var finalPaidAmount = [
+//   bills[0] + tips[0],
+//   bills[1] + tips[1],
+//   bills[2] + tips[2]
+// ];
+
+// console.log('Final paid amount: ', finalPaidAmount);
+
+// ========
+
+function calculateTip(bill) {
+  var percentage;
+  if (bill < 50) {
+    percentage = 0.2;
+  } else if (bill >= 50 && bill < 200) {
+    percentage = 0.15;
+  } else {
+    percentage = 0.1;
+  }
+  return percentage * bill;
+}
+
+var bills = [48, 124, 268];
+console.log('Bills: ', bills);
+
+var tips = [
+  calculateTip(bills[0]),
+  calculateTip(bills[1]),
+  calculateTip(bills[2])
+];
+
+console.log('Tips: ', tips);
+
+var finalPaidAmount = [
+  bills[0] + tips[0],
+  bills[1] + tips[1],
+  bills[2] + tips[2]
+];
+
+console.log('Final paid amount: ', finalPaidAmount);
