@@ -316,33 +316,68 @@ GOOD LUCK 😀
 
 // ========
 
-function calculateTip(bill) {
-  var percentage;
-  if (bill < 50) {
-    percentage = 0.2;
-  } else if (bill >= 50 && bill < 200) {
-    percentage = 0.15;
-  } else {
-    percentage = 0.1;
-  }
-  return percentage * bill;
-}
+// function calculateTip(bill) {
+//   var percentage;
+//   if (bill < 50) {
+//     percentage = 0.2;
+//   } else if (bill >= 50 && bill < 200) {
+//     percentage = 0.15;
+//   } else {
+//     percentage = 0.1;
+//   }
+//   return percentage * bill;
+// }
 
-var bills = [48, 124, 268];
-console.log('Bills: ', bills);
+// var bills = [48, 124, 268];
+// console.log('Bills: ', bills);
 
-var tips = [
-  calculateTip(bills[0]),
-  calculateTip(bills[1]),
-  calculateTip(bills[2])
-];
+// var tips = [
+//   calculateTip(bills[0]),
+//   calculateTip(bills[1]),
+//   calculateTip(bills[2])
+// ];
 
-console.log('Tips: ', tips);
+// console.log('Tips: ', tips);
 
-var finalPaidAmount = [
-  bills[0] + tips[0],
-  bills[1] + tips[1],
-  bills[2] + tips[2]
-];
+// var finalPaidAmount = [
+//   bills[0] + tips[0],
+//   bills[1] + tips[1],
+//   bills[2] + tips[2]
+// ];
 
-console.log('Final paid amount: ', finalPaidAmount);
+// console.log('Final paid amount: ', finalPaidAmount[0], finalPaidAmount[1], finalPaidAmount[2]);
+
+/******* Objects and properties
+   key value pairs
+ */
+
+// Object literal
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false
+};
+
+console.log(john);
+// dot notation
+console.log(john.firstName);
+// brackets
+console.log(john['lastName']);
+
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// new Object syntax
+var jane = new Object();
+jane.name = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+
+console.log(jane);
