@@ -347,37 +347,57 @@ GOOD LUCK 😀
 
 // console.log('Final paid amount: ', finalPaidAmount[0], finalPaidAmount[1], finalPaidAmount[2]);
 
-/******* Objects and properties
+/******* 25 Objects and properties
    key value pairs
  */
 
-// Object literal
+// // Object literal
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1990,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false
+// };
+
+// console.log(john);
+// // dot notation
+// console.log(john.firstName);
+// // brackets
+// console.log(john['lastName']);
+
+// var x = 'birthYear';
+// console.log(john[x]);
+
+// john.job = 'designer';
+// john['isMarried'] = true;
+// console.log(john);
+
+// // new Object syntax
+// var jane = new Object();
+// jane.name = 'Jane';
+// jane.birthYear = 1969;
+// jane['lastName'] = 'Smith';
+
+// console.log(jane);
+
+/******* 26 Objects and methods
+ */
+
+// // Object literal
 var john = {
   firstName: 'John',
   lastName: 'Smith',
-  birthYear: 1990,
+  birthYear: 1974,
   family: ['Jane', 'Mark', 'Bob', 'Emily'],
   job: 'teacher',
-  isMarried: false
+  isMarried: false,
+  calcAge: function() {
+    this.age = 2018 - this.birthYear; // "this" is the current object
+  }
 };
+// "this" is a "keyword" for an object, points to itself
 
+john.calcAge();
 console.log(john);
-// dot notation
-console.log(john.firstName);
-// brackets
-console.log(john['lastName']);
-
-var x = 'birthYear';
-console.log(john[x]);
-
-john.job = 'designer';
-john['isMarried'] = true;
-console.log(john);
-
-// new Object syntax
-var jane = new Object();
-jane.name = 'Jane';
-jane.birthYear = 1969;
-jane['lastName'] = 'Smith';
-
-console.log(jane);
