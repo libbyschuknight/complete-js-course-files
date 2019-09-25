@@ -386,18 +386,77 @@ GOOD LUCK 😀
  */
 
 // // Object literal
+// var john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   birthYear: 1974,
+//   family: ['Jane', 'Mark', 'Bob', 'Emily'],
+//   job: 'teacher',
+//   isMarried: false,
+//   calcAge: function() { // this is a methond on the object
+//     this.age = 2018 - this.birthYear; // "this" is the current object
+//   }
+// };
+// // "this" is a "keyword" for an object, points to itself
+
+// john.calcAge();
+// console.log(john);
+
+/*****************************
+ * CODING CHALLENGE 4
+ */
+
+/*
+Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+1. Store Mark's and John's mass and height in variables
+2. Calculate both their BMIs
+3. Create a boolean variable containing information about whether Mark has a higher BMI than John.
+4. Print a string to the console containing the variable from step 3. (Something like "Is Mark's BMI higher than John's? true")
+*/
+
+/*
+Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+1. For each of them, create an object with properties for their full name, mass, and height
+2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+*/
+
 var john = {
-  firstName: 'John',
-  lastName: 'Smith',
-  birthYear: 1974,
-  family: ['Jane', 'Mark', 'Bob', 'Emily'],
-  job: 'teacher',
-  isMarried: false,
-  calcAge: function() {
-    this.age = 2018 - this.birthYear; // "this" is the current object
+  fullName: 'John Smith',
+  mass: 110,
+  height: 1.95,
+  calcBmi: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
   }
 };
-// "this" is a "keyword" for an object, points to itself
 
-john.calcAge();
+var mark = {
+  fullName: 'Mark Marky',
+  mass: 78,
+  height: 1.69,
+  calcBmi: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+
+// 3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+// if mark bmi > john bmi
+//   log mark bmi, full name, and bmi
+
+if (mark.calcBmi() > john.calcBmi()) {
+  console.log('Highest BMI: ', mark.fullName, mark.bmi);
+} else if (john.bmi > mark.bmi) {
+  console.log('Highest BMI: ', john.fullName, john.bmi);
+} else {
+  console.log('Both have same BMI');
+  console.log(mark.fullName, mark.bmi);
+  console.log(john.fullName, john.bmi);
+}
+
+console.log(mark);
 console.log(john);
