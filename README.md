@@ -1,4 +1,4 @@
-# js-course-exercises-challenges
+# complete-js-course-files
 
 from <https://www.udemy.com/the-complete-javascript-course/>
 
