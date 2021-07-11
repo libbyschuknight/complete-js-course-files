@@ -93,21 +93,50 @@ GOOD LUCK 😀
 
 // 3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
 
-const dolphinsAverageScore = (97 + 112 + 101) / 3;
-const koalasAverageScore = (109 + 95 + 123) / 3;
+// const dolphinsAverageScore = (97 + 112 + 101) / 3;
+// const koalasAverageScore = (109 + 95 + 123) / 3;
 
-const minimumScore = 100;
+// const minimumScore = 100;
 
-if (
-  dolphinsAverageScore > koalasAverageScore &&
-  dolphinsAverageScore >= minimumScore
-) {
-  console.log('Dolphins are the winners');
-} else if (
-  koalasAverageScore > dolphinsAverageScore &&
-  koalasAverageScore >= minimumScore
-) {
-  console.log('Koalas are the winners');
-} else {
-  console.log('It is a draw!!!');
-}
+// if (
+//   dolphinsAverageScore > koalasAverageScore &&
+//   dolphinsAverageScore >= minimumScore
+// ) {
+//   console.log('Dolphins are the winners');
+// } else if (
+//   koalasAverageScore > dolphinsAverageScore &&
+//   koalasAverageScore >= minimumScore
+// ) {
+//   console.log('Koalas are the winners');
+// } else {
+//   console.log('It is a draw!!!');
+// }
+
+// HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+// HINT: Value X is between 50 and 300, if it's >= 50 && <= 300 😉
+
+////////////////////////////////////
+// Coding Challenge #4
+
+/*
+Steven wants to build a very simple tip calculator for whenever he goes eating in a resturant. In his country, it's usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+1. Your task is to caluclate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement 😅 (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
+2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: 'The bill was 275, the tip was 41.25, and the total value 316.25'
+
+TEST DATA: Test for bill values 275, 40 and 430
+
+
+GOOD LUCK 😀
+*/
+
+const billValue = 275;
+
+const tip =
+  billValue >= 50 && billValue <= 300 ? billValue * 0.15 : billValue * 0.2;
+
+console.log(
+  `The bill was ${billValue}, the tip was ${tip}, and the total value ${
+    billValue + tip
+  }`
+);
