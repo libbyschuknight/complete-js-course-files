@@ -54,24 +54,24 @@ const year = 1965;
 // console.log(addExpr(2, 3)); // script.js:16 Uncaught ReferenceError: Cannot access 'addExpr' before initialization
 // console.log(addArrow(2, 3)); // script.js:17 Uncaught ReferenceError: Cannot access 'addArrow' before initialization
 
-// func declaration
-function addDecl(a, b) {
-  return a + b;
-}
+// // func declaration
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-// func expression - assigning a function value to the const, in the temporal dead zone
-// const addExpr = function (a, b) {
+// // func expression - assigning a function value to the const, in the temporal dead zone
+// // const addExpr = function (a, b) {
+// //   return a + b;
+// // };
+
+// var addExpr = function (a, b) {
 //   return a + b;
 // };
+// // Uncaught TypeError: addExpr is not a function
+// // basically doing undefined(2, 3), which gives the same error, as using var it is hoisted but sent as undefined
 
-var addExpr = function (a, b) {
-  return a + b;
-};
-// Uncaught TypeError: addExpr is not a function
-// basically doing undefined(2, 3), which gives the same error, as using var it is hoisted but sent as undefined
-
-// arrow func
-const addArrow = (a, b) => a + b;
+// // arrow func
+// const addArrow = (a, b) => a + b;
 
 // Example
 // console.log(numProducts); // undefined, falsy value
@@ -110,21 +110,21 @@ const addArrow = (a, b) => a + b;
 // };
 // calcAgeArrow(1980);
 
-const jonas = {
-  year: 1991,
-  calcAge: function () {
-    console.log(this);
-    console.log(2037 - this.year);
-  },
-};
-jonas.calcAge();
+// const jonas = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+// };
+// jonas.calcAge();
 
-const matilda = {
-  year: 2017,
-};
+// const matilda = {
+//   year: 2017,
+// };
 
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge();
+// matilda.calcAge = jonas.calcAge;
+// matilda.calcAge();
 
 // const f = jonas.calcAge;
 // f();
@@ -137,3 +137,87 @@ matilda.calcAge();
 
 // const firstName = 'Libby'; // global variable
 // calcAge(1991);
+
+// ##  Regular Funcs vs Arrow Funcs
+
+// var firstName = 'Libby';
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+
+//   // arrow func does not get its own this, it gets the this of the parent func, which is the gloabl scope in this case, and is the window object
+//   greet: () => {
+//     console.log(this);
+//     console.log(`hey ${this.firstName}`);
+//   },
+//   // greet2: function () {
+//   //   console.log(this);
+//   //   console.log(`hey ${this.firstName}`);
+//   // },
+// };
+
+// jonas.greet();
+// // jonas.greet2();
+// console.log(this);
+
+// // never use an arrow func as a method
+
+// a func inside a method
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+
+//     // solution
+//     // const self = this; // self or that - old solution
+//     // const isMillenial = function () {
+//     //   console.log(self);
+//     //   // console.log(this.year >= 1981 && this.year <= 1996);
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     // };
+
+//     // Solution 2 - use an arrow func, will work cos it doesn't have its own this keyword
+//     // the arrow function uses the this keyword from its parent scope
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenial();
+//   },
+
+//   greet: () => {
+//     console.log(this);
+//     console.log(`hey ${this.firstName}`);
+//   },
+// };
+
+// jonas.calcAge();
+
+// // arguments keyword
+// // only available in regular function
+
+// var addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addExpr(2, 5);
+// addExpr(2, 5, 8, 12);
+
+// // arrow func - does not get the arguments keyword
+// const addArrow = (a, b) => a + b;
+
+// var addArrowExpr = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addArrowExpr(2, 5, 8);
